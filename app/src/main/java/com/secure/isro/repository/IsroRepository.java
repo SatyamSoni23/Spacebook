@@ -6,7 +6,7 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.secure.isro.NetworkUtils.NetworkUtils;
+import com.secure.isro.networkUtils.NetworkUtils;
 import com.secure.isro.api.IsroService;
 import com.secure.isro.models.Centres;
 import com.secure.isro.models.CustomerSatellites;
@@ -85,7 +85,7 @@ public class IsroRepository {
             }
             @Override
             public void onFailure(Call<T> call, Throwable t) {
-                Log.d("TEST", "CALL FAILED");
+                Log.d("TEST", t.getMessage());
             }
         });
     }

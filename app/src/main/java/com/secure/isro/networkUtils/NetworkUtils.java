@@ -1,4 +1,4 @@
-package com.secure.isro.NetworkUtils;
+package com.secure.isro.networkUtils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

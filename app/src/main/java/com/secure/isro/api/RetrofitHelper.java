@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitHelper {
 
-    public static String BASE_URL = "https://isro.vercel.app/api";
+    public static String BASE_URL = "https://isro.vercel.app/api/";
 
     public static Retrofit getInstances(){
         return new Retrofit.Builder()
