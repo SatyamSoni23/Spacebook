@@ -17,6 +17,7 @@ public class IsroApplication extends Application {
     }
 
     private void initialize() {
+        Log.d("TEST", "OK 2");
         IsroService isroService = RetrofitHelper.getInstances().create(IsroService.class);
         isroRepository = new IsroRepository(isroService, getApplicationContext());
     }

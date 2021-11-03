@@ -1,5 +1,7 @@
 package com.secure.isro.viewModels;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
@@ -16,8 +18,10 @@ public class MainViewModelFactory implements ViewModelProvider.Factory {
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        if(modelClass.isAssignableFrom(MainViewModel.class))
+        if(modelClass.isAssignableFrom(MainViewModel.class)) {
+            Log.d("TEST", "OK 5");
             return (T) new MainViewModel(repository);
+        }
         throw new IllegalArgumentException("Unknown class name");
     }
 }

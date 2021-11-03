@@ -10,15 +10,15 @@ import retrofit2.http.GET;
 
 public interface IsroService {
 
-    @GET("/spacecrafts")
+    @GET("spacecrafts")
     Call<Spacecrafts> getSpacecraft();
 
-    @GET("/launchers")
+    @GET("launchers")
     Call<Launchers> getLaunchers();
 
-    @GET("/customer_satellites")
+    @GET("customer_satellites")
     Call<CustomerSatellites> getCustomerSatellites();
 
-    @GET("/centres")
+    @GET("centres")
     Call<Centres> getCentres();
 }
