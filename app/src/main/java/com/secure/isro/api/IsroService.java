@@ -1,7 +1,6 @@
 package com.secure.isro.api;
 
 import com.secure.isro.models.Centres;
-import com.secure.isro.models.CustomerSatellites;
 import com.secure.isro.models.Launchers;
 import com.secure.isro.models.Spacecrafts;
 
@@ -15,9 +14,6 @@ public interface IsroService {
 
     @GET("launchers")
     Call<Launchers> getLaunchers();
-
-    @GET("customer_satellites")
-    Call<CustomerSatellites> getCustomerSatellites();
 
     @GET("centres")
     Call<Centres> getCentres();

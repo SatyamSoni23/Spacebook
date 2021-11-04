@@ -4,13 +4,11 @@ public class IsroModels {
 
     private Spacecrafts spacecrafts;
     private Launchers launchers;
-    private CustomerSatellites customerSatellites;
     private Centres centres;
 
-    public IsroModels(Spacecrafts spacecrafts, Launchers launchers, CustomerSatellites customerSatellites, Centres centres){
+    public IsroModels(Spacecrafts spacecrafts, Launchers launchers, Centres centres){
         this.spacecrafts = spacecrafts;
         this.launchers = launchers;
-        this.customerSatellites = customerSatellites;
         this.centres = centres;
     }
 
@@ -22,9 +20,6 @@ public class IsroModels {
         return launchers;
     }
 
-    public CustomerSatellites getCustomerSatellites() {
-        return customerSatellites;
-    }
 
     public Centres getCentres() {
         return centres;

@@ -6,7 +6,6 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.secure.isro.models.Centres;
-import com.secure.isro.models.CustomerSatellites;
 import com.secure.isro.models.Launchers;
 import com.secure.isro.models.Spacecrafts;
 import com.secure.isro.repository.IsroRepository;
@@ -23,13 +22,11 @@ public class MainViewModel extends ViewModel {
         Log.d("TEST", "OK 10");
         return isroRepository.spacecrafts;
     }
+
     public LiveData<Launchers> getLaunchers(){
         return isroRepository.launchers;
     }
-    public LiveData<CustomerSatellites> getCustomerSatellites(){
-        Log.d("TEST", "OK 10");
-        return isroRepository.customerSatellites;
-    }
+
     public LiveData<Centres> getCentres(){
         return isroRepository.centres;
     }
