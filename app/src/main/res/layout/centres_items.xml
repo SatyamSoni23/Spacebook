@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical">
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/centres_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Semi-Conductor Laboratory (SCL)"
+            android:paddingHorizontal="18sp"
+            android:paddingTop="10dp"
+            android:textSize="18sp"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="sans-serif"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/centres_item_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chandigarh"
+            android:paddingHorizontal="18sp"
+            android:paddingVertical="5dp"
+            android:textSize="18sp"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="sans-serif"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/centres_item_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Punjab/Haryana"
+            android:paddingHorizontal="18sp"
+            android:paddingBottom="10dp"
+            android:textSize="18sp"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="sans-serif"/>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,38 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.google.android.material.tabs.TabLayout
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tabTextColor="#eeeeee"
-        app:tabSelectedTextColor="@color/white"
-        app:tabIndicatorHeight="3.5dp"
-        android:layout_marginTop="0dp"
-        app:tabMode="fixed"
-        android:background="@color/primaryColor">
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/spacecrafts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Spacecrafts" />
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/launchers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Launchers"/>
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/centres"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Centres"/>
-    </com.google.android.material.tabs.TabLayout>
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabTextColor="#eeeeee"
+            app:tabSelectedTextColor="@color/white"
+            app:tabIndicatorHeight="3.5dp"
+            android:layout_marginTop="0dp"
+            app:tabMode="fixed"
+            android:background="@color/primaryColor"
+            android:textAlignment="center"
+            app:tabTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/spacecrafts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spacecrafts" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/launchers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Launchers" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/centres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Centres" />
+        </com.google.android.material.tabs.TabLayout>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/fragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tabLayout"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

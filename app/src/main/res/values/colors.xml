@@ -10,4 +10,6 @@
     <color name="primaryColor">#111111</color>
     <color name="PrimaryDarkColor">#000000</color>
     <color name="AscentColor">#373737</color>
+    <color name="background_white">#FFFCFBFF</color>
+    <color name="item_white">#FFEEEEEE</color>
 </resources>
