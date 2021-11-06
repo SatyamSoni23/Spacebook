@@ -1,10 +1,16 @@
 package com.secure.isro.models;
 
+import com.google.gson.annotations.SerializedName;
+
 public class CentresItem{
-	private String state;
-	private String name;
+	@SerializedName("id")
 	private int id;
+	@SerializedName("name")
+	private String name;
+	@SerializedName("Place")
 	private String place;
+	@SerializedName("State")
+	private String state;
 
 	public String getState(){
 		return state;

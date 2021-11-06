@@ -3,11 +3,11 @@ package com.secure.isro.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.textview.MaterialTextView;
 import com.secure.isro.R;
 import com.secure.isro.models.SpacecraftsItem;
 
@@ -40,7 +40,7 @@ public class SpacecraftsAdapter extends RecyclerView.Adapter<SpacecraftsAdapter.
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView spacecrafts_item;
+        MaterialTextView spacecrafts_item;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             spacecrafts_item =itemView.findViewById(R.id.spacecrafts_item);

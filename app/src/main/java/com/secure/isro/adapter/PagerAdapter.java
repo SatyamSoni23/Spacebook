@@ -29,9 +29,9 @@ public class PagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return new SpacecraftsFragments(mainViewModel, mainActivity);
             case 1:
-                return new LaunchersFragements(mainViewModel);
+                return new LaunchersFragements(mainViewModel, mainActivity);
             case 2:
-                return new CentresFragments(mainViewModel);
+                return new CentresFragments(mainViewModel, mainActivity);
             default:
                 return null;
         }
