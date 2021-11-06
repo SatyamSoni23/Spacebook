@@ -30,35 +30,35 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        pagerAdapter = new PagerAdapter(getSupportFragmentManager(), 3);
-        binding.fragmentContainer.setAdapter(pagerAdapter);
-
         Log.d("TEST", "OK 1");
         IsroRepository repository =((IsroApplication)getApplicationContext()).isroRepository;
         mainViewModel = new ViewModelProvider(this, new MainViewModelFactory(repository)).get(MainViewModel.class);
 
-        mainViewModel.getSpacecrafts().observe(this, new Observer<Spacecrafts>() {
-            @Override
-            public void onChanged(Spacecrafts spacecrafts) {
-                Log.d("TEST", "OK 11.1 " + String.valueOf(spacecrafts.getSpacecrafts().size()));
+        pagerAdapter = new PagerAdapter(getSupportFragmentManager(), 3, mainViewModel, this);
+        binding.fragmentContainer.setAdapter(pagerAdapter);
 
-            }
-        });
-
-        mainViewModel.getLaunchers().observe(this, new Observer<Launchers>() {
-            @Override
-            public void onChanged(Launchers launchers) {
-                Log.d("TEST", "OK 11.2 " + String.valueOf(launchers.getLaunchers().size()));
-
-            }
-        });
-
-        mainViewModel.getCentres().observe(this, new Observer<Centres>() {
-            @Override
-            public void onChanged(Centres centres) {
-                Log.d("TEST", "OK 11.4 " + String.valueOf(centres.getCentres().size()));
-            }
-        });
+//        mainViewModel.getSpacecrafts().observe(this, new Observer<Spacecrafts>() {
+//            @Override
+//            public void onChanged(Spacecrafts spacecrafts) {
+//                Log.d("TEST", "OK 11.1 " + String.valueOf(spacecrafts.getSpacecrafts().size()));
+//
+//            }
+//        });
+//
+//        mainViewModel.getLaunchers().observe(this, new Observer<Launchers>() {
+//            @Override
+//            public void onChanged(Launchers launchers) {
+//                Log.d("TEST", "OK 11.2 " + String.valueOf(launchers.getLaunchers().size()));
+//
+//            }
+//        });
+//
+//        mainViewModel.getCentres().observe(this, new Observer<Centres>() {
+//            @Override
+//            public void onChanged(Centres centres) {
+//                Log.d("TEST", "OK 11.4 " + String.valueOf(centres.getCentres().size()));
+//            }
+//        });
 
         binding.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

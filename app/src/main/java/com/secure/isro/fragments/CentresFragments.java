@@ -10,8 +10,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.secure.isro.R;
+import com.secure.isro.viewModels.MainViewModel;
 
 public class CentresFragments extends Fragment {
+
+    MainViewModel mainViewModel;
+    public CentresFragments(MainViewModel mainViewModel){
+        this.mainViewModel = mainViewModel;
+    }
 
     @Nullable
     @Override
