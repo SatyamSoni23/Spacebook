@@ -21,11 +21,11 @@
             app:layout_constraintTop_toTopOf="parent"
             app:tabTextColor="#eeeeee"
             app:tabSelectedTextColor="@color/white"
-            app:tabIndicatorHeight="5dp"
+            app:tabIndicatorColor="@color/background_white"
+            app:tabIndicatorHeight="3.5dp"
             android:layout_marginTop="0dp"
-            app:tabMode="fixed"
+            app:tabMode="auto"
             android:background="@color/primaryColor"
-            android:textAlignment="center"
             app:tabTextAppearance="@style/TextAppearance.AppCompat.Medium">
 
             <com.google.android.material.tabs.TabItem

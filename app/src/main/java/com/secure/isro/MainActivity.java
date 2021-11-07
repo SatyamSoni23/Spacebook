@@ -37,29 +37,7 @@ public class MainActivity extends AppCompatActivity {
         pagerAdapter = new PagerAdapter(getSupportFragmentManager(), 3, mainViewModel, this);
         binding.fragmentContainer.setAdapter(pagerAdapter);
 
-//        mainViewModel.getSpacecrafts().observe(this, new Observer<Spacecrafts>() {
-//            @Override
-//            public void onChanged(Spacecrafts spacecrafts) {
-//                Log.d("TEST", "OK 11.1 " + String.valueOf(spacecrafts.getSpacecrafts().size()));
-//
-//            }
-//        });
-//
-//        mainViewModel.getLaunchers().observe(this, new Observer<Launchers>() {
-//            @Override
-//            public void onChanged(Launchers launchers) {
-//                Log.d("TEST", "OK 11.2 " + String.valueOf(launchers.getLaunchers().size()));
-//
-//            }
-//        });
-//
-//        mainViewModel.getCentres().observe(this, new Observer<Centres>() {
-//            @Override
-//            public void onChanged(Centres centres) {
-//                Log.d("TEST", "OK 11.4 " + String.valueOf(centres.getCentres().size()));
-//            }
-//        });
-
+        binding.fragmentContainer.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(binding.tabLayout));
         binding.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

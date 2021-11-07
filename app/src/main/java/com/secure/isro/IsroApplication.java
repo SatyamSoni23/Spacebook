@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.secure.isro.api.IsroService;
 import com.secure.isro.api.RetrofitHelper;
+import com.secure.isro.db.IsroDatabase;
 import com.secure.isro.repository.IsroRepository;
 
 public class IsroApplication extends Application {
@@ -19,6 +20,7 @@ public class IsroApplication extends Application {
     private void initialize() {
         Log.d("TEST", "OK 2");
         IsroService isroService = RetrofitHelper.getInstances().create(IsroService.class);
-        isroRepository = new IsroRepository(isroService, getApplicationContext());
+        IsroDatabase isroDatabase = IsroDatabase.getDatabase(getApplicationContext());
+        isroRepository = new IsroRepository(isroService, isroDatabase, getApplicationContext());
     }
 }
