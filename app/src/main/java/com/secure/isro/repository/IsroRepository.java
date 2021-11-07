@@ -147,4 +147,10 @@ public class IsroRepository {
             }
         });
     }
+
+    public void getIsroDataInBackground(){
+        CallApi(isroService.getSpacecraft(), "Spacecrafts");
+        CallApi(isroService.getLaunchers(), "Launchers");
+        CallApi(isroService.getCentres(), "Centres");
+    }
 }
