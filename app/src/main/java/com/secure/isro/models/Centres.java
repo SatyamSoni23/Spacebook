@@ -8,6 +8,10 @@ public class Centres{
 	@SerializedName("centres")
 	private List<CentresItem> centres;
 
+	public Centres(List<CentresItem> centres){
+		this.centres = centres;
+	}
+
 	public List<CentresItem> getCentres(){
 		return centres;
 	}

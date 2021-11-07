@@ -8,12 +8,16 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.secure.isro.db.IsroDatabase;
+import com.secure.isro.models.CentresItem;
+import com.secure.isro.models.LaunchersItem;
 import com.secure.isro.models.SpacecraftsItem;
 import com.secure.isro.networkUtils.NetworkUtils;
 import com.secure.isro.api.IsroService;
 import com.secure.isro.models.Centres;
 import com.secure.isro.models.Launchers;
 import com.secure.isro.models.Spacecrafts;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -59,6 +63,7 @@ public class IsroRepository {
             Log.d("TEST", "OK 7");
         }
         else{
+            startOfflineMode();
             Log.d("TEST", "YOU ARE OFFLINE");
         }
     }
@@ -119,6 +124,26 @@ public class IsroRepository {
             @Override
             public void run() {
                 isroDatabase.isroDao().addCentres(response.body().getCentres());
+            }
+        });
+    }
+
+    private void startOfflineMode() {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+
+                List<SpacecraftsItem> spacecraftsItemList = isroDatabase.isroDao().getSpacecrafts();
+                Spacecrafts spacecrafts = new Spacecrafts(spacecraftsItemList);
+                spacecraftsLiveData.postValue(spacecrafts);
+
+                List<LaunchersItem> launchersItemList = isroDatabase.isroDao().getLaunchers();
+                Launchers launchers = new Launchers(launchersItemList);
+                launchersLiveData.postValue(launchers);
+
+                List<CentresItem> centresItemList = isroDatabase.isroDao().getCentres();
+                Centres centres = new Centres(centresItemList);
+                centresLiveData.postValue(centres);
             }
         });
     }
