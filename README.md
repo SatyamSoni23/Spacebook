@@ -41,3 +41,6 @@ https://isro.vercel.app/
 ## Architecture
 <img src="https://github.com/SatyamSoni23/Spacebook/blob/master/Screenshots/1.jpg" width=600 height=400 padding = "20"/>
 <img src="https://github.com/SatyamSoni23/Spacebook/blob/master/Screenshots/2.png" width=600 height=450 padding = "20"/>
+
+## Performance
+<img src="https://github.com/SatyamSoni23/Spacebook/blob/master/Screenshots/Capture.JPG" width=600 height=400 padding = "20"/>
