@@ -28,7 +28,7 @@ public class IsroApplication extends Application {
 
     private void setupWorker() {
         Constraints constraints = new Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build();
-        PeriodicWorkRequest workRequest = new PeriodicWorkRequest.Builder(IsroWorker.class,1, TimeUnit.MINUTES)
+        PeriodicWorkRequest workRequest = new PeriodicWorkRequest.Builder(IsroWorker.class,30, TimeUnit.MINUTES)
                 .setConstraints(constraints)
                 .build();
         WorkManager.getInstance(this).enqueue(workRequest);

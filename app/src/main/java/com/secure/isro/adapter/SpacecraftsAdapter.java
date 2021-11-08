@@ -1,14 +1,14 @@
 package com.secure.isro.adapter;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.textview.MaterialTextView;
 import com.secure.isro.R;
+import com.secure.isro.databinding.SpacecraftItemBinding;
 import com.secure.isro.models.SpacecraftsItem;
 
 import java.util.List;
@@ -24,14 +24,14 @@ public class SpacecraftsAdapter extends RecyclerView.Adapter<SpacecraftsAdapter.
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.spacecraft_item, parent, false);
-        return new ViewHolder(view);
+        SpacecraftItemBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.spacecraft_item, parent, false);
+        return new ViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         SpacecraftsItem item = spacecraftsList.get(position);
-        holder.spacecrafts_item.setText(item.getName());
+        holder.spacecrafts_item_binding.spacecraftsItem.setText(item.getName());
     }
 
     @Override
@@ -40,10 +40,10 @@ public class SpacecraftsAdapter extends RecyclerView.Adapter<SpacecraftsAdapter.
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        MaterialTextView spacecrafts_item;
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            spacecrafts_item =itemView.findViewById(R.id.spacecrafts_item);
+        SpacecraftItemBinding spacecrafts_item_binding;
+        public ViewHolder(@NonNull SpacecraftItemBinding binding) {
+            super(binding.getRoot());
+            spacecrafts_item_binding = binding;
         }
     }
 }

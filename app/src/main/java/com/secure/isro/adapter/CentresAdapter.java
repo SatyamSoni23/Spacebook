@@ -1,15 +1,14 @@
 package com.secure.isro.adapter;
 
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.textview.MaterialTextView;
 import com.secure.isro.R;
+import com.secure.isro.databinding.CentresItemsBinding;
 import com.secure.isro.models.CentresItem;
 
 import java.util.List;
@@ -25,16 +24,16 @@ public class CentresAdapter extends RecyclerView.Adapter<CentresAdapter.ViewHold
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.centres_items, parent, false);
-        return new ViewHolder(view);
+        CentresItemsBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.centres_items, parent, false);
+        return new ViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         CentresItem centresItem = centresItemList.get(position);
-        holder.centres_item_name.setText(centresItem.getName());
-        holder.centres_item_place.setText(centresItem.getPlace());
-        holder.centres_item_state.setText(centresItem.getState());
+        holder.centres_item_binding.centresItemName.setText(centresItem.getName());
+        holder.centres_item_binding.centresItemPlace.setText(centresItem.getPlace());
+        holder.centres_item_binding.centresItemState.setText(centresItem.getState());
     }
 
     @Override
@@ -43,12 +42,10 @@ public class CentresAdapter extends RecyclerView.Adapter<CentresAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        MaterialTextView centres_item_name, centres_item_place, centres_item_state;
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            centres_item_name = itemView.findViewById(R.id.centres_item_name);
-            centres_item_place = itemView.findViewById(R.id.centres_item_place);
-            centres_item_state = itemView.findViewById(R.id.centres_item_state);
+        CentresItemsBinding centres_item_binding;
+        public ViewHolder(@NonNull CentresItemsBinding binding) {
+            super(binding.getRoot());
+            centres_item_binding = binding;
         }
     }
 }
